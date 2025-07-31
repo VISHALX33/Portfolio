@@ -12,7 +12,8 @@ const Hero = () => {
   ///
   ///
   ///
-
+  ////
+  ///
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
