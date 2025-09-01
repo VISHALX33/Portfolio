@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import elite from '../assets/elite.png'
+import note from '../assets/note.png'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -8,22 +10,22 @@ const Projects = () => {
       id: 1,
       title: "Elite-Crew (Service+Product)",
       description: "A comprehensive service and product-based platform where users can book services, purchase products, write blogs, and review services in a mobile-app-like responsive interface.",
-      image: "https://via.placeholder.com/400x250/3B82F6/FFFFFF?text=Elite-Crew",
+      image: elite, // ✅ fixed
       category: "fullstack",
       technologies: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js", "Razorpay"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://elite-crew.netlify.app/",
+      githubUrl: "https://github.com/VISHALX33/elite-crew",
       features: ["Service Booking", "Product Purchase", "Blog System", "Payment Gateway", "User Reviews", "Responsive Design"]
     },
     {
       id: 2,
       title: "Note-Nest (Notes sharing platform)",
       description: "A full-stack note-sharing app with real-time chat and personal productivity tools, featuring secure file uploads/downloads and dynamic note pinning.",
-      image: "https://via.placeholder.com/400x250/10B981/FFFFFF?text=Note-Nest",
+      image: note, // ✅ fixed
       category: "fullstack",
       technologies: ["MERN Stack", "JWT", "Real-time Chat", "File Upload", "Tailwind CSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://notenests.netlify.app/dashboard",
+      githubUrl: "https://github.com/VISHALX33/NodeNest-main",
       features: ["Note Sharing", "Real-time Chat", "File Upload/Download", "Dynamic Pinning", "User Authentication", "Responsive Design"]
     }
   ]
@@ -35,8 +37,8 @@ const Projects = () => {
     { id: 'fullstack', label: 'Full Stack' }
   ]
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.category === activeFilter)
 
   return (
@@ -81,7 +83,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <div className="absolute inset-0  bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                   <div className="opacity-0 hover:opacity-100 transition-opacity duration-300 flex space-x-4">
                     <a
                       href={project.liveUrl}
@@ -155,25 +157,9 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* Call to Action */}
-        {/* <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Interested in Working Together?</h3>
-            <p className="text-blue-100 mb-6">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-            </p>
-            <a
-              href="#contact"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 inline-block"
-            >
-              Let's Talk
-            </a>
-          </div>
-        </div> */}
       </div>
     </section>
   )
 }
 
-export default Projects 
+export default Projects

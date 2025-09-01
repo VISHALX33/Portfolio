@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileImage from '../assets/Profileimage.f4fbe39b59c80f58e835.jpg'
+import ProfileImage from '../assets/Vishalppp.png'
 import ResumePDF from '../assets/Vishal_Prajapati_Resume.pdf'
 
 const Hero = () => {
