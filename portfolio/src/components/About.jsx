@@ -1,5 +1,5 @@
 import React from 'react'
-
+///////////////
 const About = () => {
   const highlights = [
     { icon: "🎯", title: "Full Stack Expertise", description: "Proficient in MERN stack development with scalable solutions" },
