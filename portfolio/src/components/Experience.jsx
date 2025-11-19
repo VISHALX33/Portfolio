@@ -116,7 +116,7 @@ const Experience = () => {
         {/* Summary Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
-            { number: "2+", label: "Years Experience" },
+            { number: "0.6", label: "Years Experience" },
             { number: "5+", label: "Projects Completed" },
             { number: "15+", label: "Technologies Mastered" },
             { number: "8.5", label: "CGPA Score" }

@@ -58,7 +58,7 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Experience</span>
-                  <span className="font-semibold text-gray-900">2+ Years</span>
+                  <span className="font-semibold text-gray-900"> 0.6 Years</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Projects Completed</span>
