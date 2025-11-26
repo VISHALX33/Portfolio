@@ -41,12 +41,12 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: "GitHub", url: "https://github.com/VISHALX33", icon: <FaGithub className="w-6 h-6" /> },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/vishal-prajapati-445799289/", icon: <FaLinkedin className="w-6 h-6" /> },
-    { name: "Twitter", url: "https://x.com/VishalPraja89", icon: <FaTwitter className="w-6 h-6" /> },
-    { name: "Instagram", url: "https://www.instagram.com/vishal_20_03/", icon: <FaInstagram className="w-6 h-6" /> },
-    { name: "LeetCode", url: "https://leetcode.com/u/vishalprajapati2303/", icon: <SiLeetcode className="w-6 h-6" /> },
-   ];
+    { name: "GitHub", url: "https://github.com/VISHALX33", icon: <FaGithub className="w-5 h-5" /> },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/vishal-prajapati-445799289/", icon: <FaLinkedin className="w-5 h-5" /> },
+    { name: "Twitter", url: "https://x.com/VishalPraja89", icon: <FaTwitter className="w-5 h-5" /> },
+    { name: "Instagram", url: "https://www.instagram.com/vishal_20_03/", icon: <FaInstagram className="w-5 h-5" /> },
+    { name: "LeetCode", url: "https://leetcode.com/u/vishalprajapati2303/", icon: <SiLeetcode className="w-5 h-5" /> },
+  ];
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
@@ -57,24 +57,26 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">Vishal Prajapati</h3>
-            <p className="text-gray-300 mb-6">
-              Full Stack Web Developer passionate about creating robust and scalable web applications 
-              using the MERN stack and modern technologies.
+      
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          {/* Brand */}
+          <div>
+            <h3 className="text-3xl font-bold text-blue-400 mb-4">Vishal Prajapati</h3>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Full Stack Developer specializing in modern, scalable, and efficient web applications.
             </p>
-            <div className="flex space-x-4">
+
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:text-white transition-colors duration-200"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-200"
                   title={social.name}
                 >
                   {social.icon}
@@ -83,10 +85,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links */}
+          {/* Footer Navigation */}
           {footerLinks.sections.map((section, index) => (
             <div key={index}>
-              <h4 className="text-lg font-semibold text-white mb-4">{section.title}</h4>
+              <h4 className="text-lg font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
@@ -109,32 +111,22 @@ const Footer = () => {
           ))}
         </div>
 
-        
-      </div>
+        {/* Divider */}
+        <div className="border-t border-gray-800 my-10"></div>
 
-      {/* Bottom Footer */}
-      <div className="bg-gray-950 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Vishal Prajapati. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-blue-400 transition-colors duration-200">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-blue-400 transition-colors duration-200">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-blue-400 transition-colors duration-200">
-                Cookie Policy
-              </a>
-            </div>
+        {/* Bottom Footer */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <p>© {currentYear} Vishal Prajapati. All rights reserved.</p>
+
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-blue-400">Privacy Policy</a>
+            <a href="#" className="hover:text-blue-400">Terms</a>
+            <a href="#" className="hover:text-blue-400">Cookies</a>
           </div>
         </div>
       </div>
 
-      {/* Back to Top Button */}
+      {/* Scroll to Top */}
       <button
         onClick={() => scrollToSection('#home')}
         className="fixed bottom-6 right-6 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center z-50"
@@ -148,4 +140,4 @@ const Footer = () => {
   )
 }
 
-export default Footer 
+export default Footer

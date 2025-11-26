@@ -9,10 +9,10 @@ const Experience = () => {
       location: "Kota, Rajasthan, India",
       description: "Developed robust backend microservices and RESTful APIs for astrology-based web applications.",
       achievements: [
-        "Built and thoroughly tested robust RESTful APIs using Node.js, Firebase, and SQL database",
-        "Worked extensively on AstroNode backend modules: product, service, and payment-related APIs",
-        "Developed scalable backend microservices in Node.js for astrology-based web applications",
-        "Collaborated with team to deliver high-quality, production-ready code"
+        "Built and thoroughly tested RESTful APIs using Node.js, Firebase, and SQL",
+        "Worked on AstroNode backend modules: product, service, and payment APIs",
+        "Developed scalable backend microservices for astrology platforms",
+        "Collaborated with the team to deliver production-ready backend systems"
       ],
       technologies: ["Node.js", "Firebase", "SQL", "REST APIs", "Microservices", "JavaScript"]
     },
@@ -23,10 +23,10 @@ const Experience = () => {
       location: "Kota, Rajasthan, India",
       description: "Created responsive healthcare web applications and contributed to AI-based health bot development.",
       achievements: [
-        "Created responsive and modern healthcare web pages using Tailwind CSS and core JavaScript",
-        "Built and thoroughly validated complex dynamic forms in React for Dooper's healthcare web platform",
-        "Integrated advanced SEO enhancements in multiple React projects and PWA web modules",
-        "Contributed actively to AI-based health bot data collection, interface design, and UI integration"
+        "Developed responsive healthcare pages using Tailwind & JavaScript",
+        "Built dynamic forms and complex UI modules in React",
+        "Enhanced multiple React projects with strong SEO optimizations",
+        "Contributed to AI health bot dataset, UI workflow, and integrations"
       ],
       technologies: ["React", "Tailwind CSS", "JavaScript", "PWA", "SEO", "AI Integration"]
     }
@@ -35,6 +35,8 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Work Experience
@@ -46,23 +48,27 @@ const Experience = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
+
+          {/* Timeline vertical line */}
           <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((exp, index) => (
-              <div key={index} className={`relative flex items-center ${
+              <div key={index} className={`relative flex items-start ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}>
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
 
-                {/* Content */}
+                {/* Timeline Dot */}
+                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 
+                  w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
+
+                {/* Content Card */}
                 <div className={`ml-12 md:ml-0 md:w-5/12 ${
-                  index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
+                  index % 2 === 0 ? 'md:mr-auto md:pr-10' : 'md:ml-auto md:pl-10'
                 }`}>
-                  <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
-                    {/* Header */}
+                  <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300">
+
+                    {/* Position + Duration */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-xl font-bold text-gray-900">{exp.position}</h3>
@@ -70,8 +76,10 @@ const Experience = () => {
                           {exp.duration}
                         </span>
                       </div>
-                      <h4 className="text-lg font-semibold text-gray-700 mb-1">{exp.company}</h4>
-                      <p className="text-gray-500 flex items-center">
+
+                      {/* Company + Location */}
+                      <h4 className="text-lg font-semibold text-gray-700">{exp.company}</h4>
+                      <p className="text-gray-500 flex items-center mt-1">
                         <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                         </svg>
@@ -79,7 +87,7 @@ const Experience = () => {
                       </p>
                     </div>
 
-                    {/* Description */}
+                    {/* Short Description */}
                     <p className="text-gray-600 mb-4">{exp.description}</p>
 
                     {/* Achievements */}
@@ -95,17 +103,21 @@ const Experience = () => {
                       </ul>
                     </div>
 
-                    {/* Technologies */}
+                    {/* Tech Stack */}
                     <div>
                       <h5 className="font-semibold text-gray-900 mb-2">Technologies Used:</h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                          <span 
+                            key={idx} 
+                            className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full border border-gray-200"
+                          >
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -113,23 +125,27 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Summary Stats */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* Stats Section */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
             { number: "0.6", label: "Years Experience" },
             { number: "5+", label: "Projects Completed" },
             { number: "15+", label: "Technologies Mastered" },
             { number: "8.5", label: "CGPA Score" }
           ].map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl">
+            <div 
+              key={index} 
+              className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl shadow-sm hover:shadow-md transition-all"
+            >
               <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
               <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
 }
 
-export default Experience 
+export default Experience
